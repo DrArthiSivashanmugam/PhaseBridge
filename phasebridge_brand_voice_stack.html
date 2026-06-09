@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@300;400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --teal:#1A8C72; --teal-b:#22A882; --teal-d:#0D6E5A;
+  --ink:#1C1F22; --slate:#4A5057; --soft:#8A9099;
+  --paper:#F8F9FA; --warm:#EFEFEB;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --mono:'DM Mono',monospace;
+  --sans:'Plus Jakarta Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--warm);font-family:var(--sans);font-weight:300;padding:2rem;}
+.page{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+
+.label{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
+.label::before{content:'';display:block;width:24px;height:1px;background:var(--teal);}
+
+/* HERO MOCK */
+.hero{background:var(--ink);border-radius:14px;padding:3rem 2.5rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 30%,rgba(26,140,114,0.08),transparent 70%);pointer-events:none;}
+.hero-eyebrow{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(34,168,130,0.6);margin-bottom:1.5rem;display:flex;align-items:center;gap:10px;}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:rgba(34,168,130,0.4);}
+
+/* Logo block */
+.logo-block{margin-bottom:2.5rem;}
+.logo-name{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.6rem);font-weight:300;color:var(--paper);letter-spacing:0.04em;line-height:1;margin-bottom:6px;}
+.logo-name span{color:var(--teal-b);font-weight:400;}
+.logo-rule{width:48px;height:1px;background:var(--teal);margin:8px 0;}
+.logo-tagline{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(34,168,130,0.75);}
+.logo-tagline em{font-style:normal;color:var(--teal-b);}
+
+/* Hero line */
+.hero-line{font-family:var(--serif);font-size:clamp(2rem,5vw,3.8rem);font-weight:300;color:var(--paper);line-height:1.1;margin-bottom:1.2rem;}
+.hero-line em{font-style:italic;color:var(--teal-b);}
+
+.hero-sub{font-size:0.88rem;color:rgba(248,249,250,0.5);line-height:1.8;max-width:560px;}
+
+/* ABOUT MOCK */
+.about{background:white;border-radius:14px;padding:2.5rem;border:0.5px solid rgba(0,0,0,0.06);}
+.about-title{font-family:var(--serif);font-size:1.6rem;font-weight:300;color:var(--ink);margin-bottom:1.2rem;}
+.about-body{font-size:0.88rem;color:var(--slate);line-height:1.85;margin-bottom:1.8rem;}
+.about-body strong{color:var(--ink);font-weight:500;}
+.about-philosophy{border-left:2px solid var(--teal);padding-left:1.5rem;}
+.about-phil-label{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:8px;}
+.about-phil-text{font-family:var(--serif);font-size:1.4rem;font-weight:300;color:var(--ink);line-height:1.4;}
+.about-phil-text em{font-style:italic;color:var(--teal);}
+
+/* BREAKDOWN */
+.breakdown{background:white;border-radius:14px;padding:2rem;border:0.5px solid rgba(0,0,0,0.06);}
+.br-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:1rem;}
+.br-card{background:var(--warm);border-radius:10px;padding:1.2rem;}
+.br-num{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;color:var(--teal);margin-bottom:6px;}
+.br-line{font-family:var(--serif);font-size:1.1rem;font-weight:300;color:var(--ink);margin-bottom:6px;line-height:1.2;}
+.br-line em{font-style:italic;color:var(--teal);}
+.br-job{font-size:0.78rem;color:var(--soft);line-height:1.6;}
+.br-placement{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal-d);margin-top:8px;padding:3px 8px;background:#E8F5F1;border-radius:3px;display:inline-block;}
+
+/* USAGE */
+.usage{background:var(--ink);border-radius:14px;padding:2rem;}
+.usage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:1rem;}
+.usage-item{background:rgba(248,249,250,0.04);border-radius:8px;padding:1rem;}
+.usage-context{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(34,168,130,0.6);margin-bottom:6px;}
+.usage-text{font-family:var(--serif);font-size:0.9rem;color:var(--paper);line-height:1.4;}
+.usage-text em{color:var(--teal-b);font-style:italic;}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HERO MOCK -->
+<div class="hero">
+  <div class="hero-eyebrow">Phasebridge Research · Scientific Consultancy</div>
+
+  <div class="logo-block">
+    <div class="logo-name">Phase<span>bridge</span> Research</div>
+    <div class="logo-rule"></div>
+    <div class="logo-tagline">Science. <em>Bridged.</em></div>
+  </div>
+
+  <div class="hero-line">Your problem,<br><em>our pursuit.</em></div>
+
+  <div class="hero-sub">
+    A multidisciplinary scientific consultancy operating at the intersection of computational chemistry, experimental science, and industrial innovation — from early TRL assessment through to validated scale-up and technology transfer.
+  </div>
+</div>
+
+<!-- ABOUT MOCK -->
+<div class="about">
+  <div class="label">About / Philosophy section</div>
+  <div class="about-title">Why Phasebridge Research?</div>
+  <div class="about-body">
+    The hardest technical problems are never confined to one field. Phasebridge holds expertise across <strong>computational chemistry, medicinal and organic synthesis, process and formulation development, and industrial chemistry.</strong> We apply cross-domain thinking as a deliberate method — not as a workaround. That integration is our service.<br/><br/>
+    We bridge every domain until we understand the problem completely. We connect every dot until the solution becomes clear. And we stay with our clients every step of the way — from the first conversation to the final deliverable.
+  </div>
+  <div class="about-philosophy">
+    <div class="about-phil-label">Our commitment</div>
+    <div class="about-phil-text">We stand by science.<br><em>We stand by you.</em></div>
+  </div>
+</div>
+
+<!-- BREAKDOWN CARD -->
+<div class="breakdown">
+  <div class="label">Brand voice — what each line does</div>
+  <div class="br-grid">
+
+    <div class="br-card">
+      <div class="br-num">Identity</div>
+      <div class="br-line">Science. <em>Bridged.</em></div>
+      <div class="br-job">States what you are. Two words, full stop. The period after Science creates a pause — like a breath before the action word. Appears under the logo always.</div>
+      <div class="br-placement">Under logo · Email signature · Proposals</div>
+    </div>
+
+    <div class="br-card">
+      <div class="br-num">Commitment</div>
+      <div class="br-line">Your problem,<br><em>our pursuit.</em></div>
+      <div class="br-job">States your relationship to the client. The comma creates a partnership — not a transaction. "Pursuit" signals relentless engagement, not just delivery.</div>
+      <div class="br-placement">Hero headline · LinkedIn banner · Pitch deck cover</div>
+    </div>
+
+    <div class="br-card">
+      <div class="br-num">Character</div>
+      <div class="br-line">We stand by science.<br><em>We stand by you.</em></div>
+      <div class="br-job">States who you are as people, not just as a firm. Rigour and loyalty simultaneously. The line that makes someone trust you before reading anything else.</div>
+      <div class="br-placement">About page · Proposals · Closing statement</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- USAGE ACROSS TOUCHPOINTS -->
+<div class="usage">
+  <div class="label" style="color:rgba(34,168,130,0.6);">
+    <span style="display:block;width:24px;height:1px;background:rgba(34,168,130,0.4);"></span>
+    Across every touchpoint
+  </div>
+  <div class="usage-grid">
+    <div class="usage-item">
+      <div class="usage-context">Website hero</div>
+      <div class="usage-text">Your problem,<br><em>our pursuit.</em></div>
+    </div>
+    <div class="usage-item">
+      <div class="usage-context">Logo lockup</div>
+      <div class="usage-text">Phasebridge Research<br><em>Science. Bridged.</em></div>
+    </div>
+    <div class="usage-item">
+      <div class="usage-context">Email signature</div>
+      <div class="usage-text">Phasebridge Research · <em>Science. Bridged.</em></div>
+    </div>
+    <div class="usage-item">
+      <div class="usage-context">About page</div>
+      <div class="usage-text">We stand by science.<br><em>We stand by you.</em></div>
+    </div>
+    <div class="usage-item">
+      <div class="usage-context">LinkedIn banner</div>
+      <div class="usage-text">Your problem,<br><em>our pursuit.</em></div>
+    </div>
+    <div class="usage-item">
+      <div class="usage-context">Proposal cover</div>
+      <div class="usage-text">Science. <em>Bridged.</em><br>Your problem, our pursuit.</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
